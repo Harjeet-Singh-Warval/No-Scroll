@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FocusGuard Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "error": "#ffb4ab",
+                "tertiary-fixed": "#ffdadb",
+                "surface-variant": "#35343a",
+                "secondary-fixed": "#73fda0",
+                "primary": "#c4c0ff",
+                "on-secondary-fixed": "#00210c",
+                "on-primary-fixed-variant": "#3622ca",
+                "on-secondary-fixed-variant": "#005228",
+                "surface-container-highest": "#35343a",
+                "secondary": "#54e087",
+                "outline": "#918fa1",
+                "tertiary": "#ffb2b8",
+                "surface-container-low": "#1b1b20",
+                "secondary-fixed-dim": "#54e087",
+                "primary-fixed-dim": "#c4c0ff",
+                "primary-fixed": "#e3dfff",
+                "on-surface-variant": "#c7c4d8",
+                "on-tertiary-fixed": "#40000f",
+                "tertiary-container": "#ff506f",
+                "on-secondary-container": "#00391a",
+                "on-error": "#690005",
+                "outline-variant": "#464555",
+                "on-error-container": "#ffdad6",
+                "background": "#131318",
+                "on-primary-container": "#1b0091",
+                "secondary-container": "#04af5d",
+                "on-tertiary-container": "#5b0019",
+                "on-surface": "#e4e1e9",
+                "inverse-surface": "#e4e1e9",
+                "on-secondary": "#00391a",
+                "surface": "#131318",
+                "surface-tint": "#c4c0ff",
+                "surface-bright": "#39383e",
+                "on-tertiary-fixed-variant": "#91002d",
+                "surface-container": "#1f1f25",
+                "tertiary-fixed-dim": "#ffb2b8",
+                "on-primary-fixed": "#100069",
+                "error-container": "#93000a",
+                "on-tertiary": "#67001e",
+                "surface-container-high": "#2a292f",
+                "surface-dim": "#131318",
+                "on-surface": "#e4e1e9",
+                "inverse-primary": "#4f44e2",
+                "inverse-on-surface": "#303036",
+                "on-primary": "#2000a4",
+                "surface-container-lowest": "#0e0e13",
+                "primary-container": "#8781ff"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        body {
+            background-color: #131318;
+            color: #e4e1e9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for focus flow */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131318; }
+        ::-webkit-scrollbar-thumb { background: #35343a; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body pb-32">
+<!-- TopAppBar Shell -->
+<header class="w-full top-0 sticky z-50 bg-[#131318]">
+<div class="flex items-center px-6 h-16 w-full max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#6C63FF] material-symbols-outlined active:scale-95 transition-transform duration-200">arrow_back</button>
+<h1 class="font-['Plus_Jakarta_Sans'] text-xl font-bold tracking-tight text-[#f0f0f7]">Settings</h1>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto px-4 space-y-8 mt-4">
+<!-- APPEARANCE SECTION -->
+<section>
+<h2 class="text-[10px] font-bold uppercase tracking-[0.15em] text-outline ml-4 mb-3">APPEARANCE</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="flex items-center justify-between px-5 py-4 min-h-[56px]">
+<span class="text-on-surface font-medium">Theme</span>
+<div class="flex bg-surface-container-highest p-1 rounded-full">
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-outline">Light</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold bg-[#6C63FF] text-white">Dark</button>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-outline">System</button>
+</div>
+</div>
+</div>
+</section>
+<!-- PROTECTION SECTION -->
+<section>
+<h2 class="text-[10px] font-bold uppercase tracking-[0.15em] text-outline ml-4 mb-3">PROTECTION</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden divide-y divide-outline-variant/15">
+<!-- Block action -->
+<div class="flex items-center justify-between px-5 py-3 min-h-[56px] hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Block action</span>
+<span class="text-on-surface-variant text-sm">Close video</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<!-- Curious limit -->
+<div class="flex items-center justify-between px-5 py-3 min-h-[56px] hover:bg-surface-container transition-colors">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Curious limit</span>
+<span class="text-on-surface-variant text-sm">Allow 3 reels before blocking</span>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-highest rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container text-[#6C63FF] active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<span class="text-on-surface font-bold min-w-[1ch] text-center">3</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container text-[#6C63FF] active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+<!-- PIN Protection -->
+<div class="flex items-center justify-between px-5 py-3 min-h-[56px] hover:bg-surface-container transition-colors">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">PIN protection</span>
+<span class="text-on-surface-variant text-sm">Require PIN to open settings</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-colors duration-200"></div>
+<div class="absolute left-1 top-1 bg-outline w-4 h-4 rounded-full transition-transform duration-200"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- PROTECTED APPS SECTION -->
+<section>
+<div class="flex justify-between items-center ml-4 mb-3">
+<h2 class="text-[10px] font-bold uppercase tracking-[0.15em] text-outline">PROTECTED APPS</h2>
+<span class="text-[10px] text-[#6C63FF] mr-4 font-bold uppercase tracking-wider">Manage all</span>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden divide-y divide-outline-variant/15">
+<!-- App Rows -->
+<div class="flex items-center justify-between px-5 py-3 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400 p-1 flex items-center justify-center">
+<img alt="Instagram Logo" class="w-6 h-6 object-contain" data-alt="Instagram icon on colorful gradient background with social media aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjYF8WKBC41isIQ3ckZyj0OVj-5uecUv4Xb0GAfqo2K1sXnR0h_4IpQGgL1t9ntzgSMXKqz8y4qmGmBYD7vgsy7CQtuy02QAf2wT3C8lBkQej1EFxjxytoqlNoCcTEhKHFYWyZ6h-r25MdBGpg5BOFV69ev0OIP2JTNCufX44GmRTP_4Av4_8BId59SOIBXtTI_fz-Gl0XCS-N6pq9fbGHs22ZyHh-vLh_McwILGQ2M3ru9CPy52s_dRzkzIwMrkpB0bEAemlmHRrY"/>
+</div>
+<span class="text-on-surface font-medium">Instagram</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary/20 border border-primary/20 rounded-full transition-colors duration-200"></div>
+<div class="absolute right-1 top-1 bg-[#6C63FF] w-4 h-4 rounded-full transition-transform duration-200 shadow-lg shadow-primary/40"></div>
+</div>
+</div>
+<div class="flex items-center justify-between px-5 py-3 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center overflow-hidden">
+<img alt="YouTube Logo" class="w-6 h-6 object-contain" data-alt="YouTube app icon with white play symbol on vibrant red background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb50Nb-p91zhhtn8hAsRaSzy49pH4GzY6OIoeXK7mlDbyzGGD2JCES3EKgxwHX9ZScT24cjNHwj8-fBlHIc27dd2Q0Ek-01cbvS29gXro5Dt5lZoQ8szf7ldSm_2NJIFb1jW56QFmqkDR-aiIkTaT7vdpOIim2yE31ox53t2b54qJhpAxVYw6qMfJ59WgH0FJDS9eb85NuqmrzS7fmuDRLsZfc5cOH7WiIjhZRIo5XHq02Ysf8uTm_HuNbWKrDoyhZQ4s0OV-07aG6"/>
+</div>
+<span class="text-on-surface font-medium">YouTube</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary/20 border border-primary/20 rounded-full transition-colors duration-200"></div>
+<div class="absolute right-1 top-1 bg-[#6C63FF] w-4 h-4 rounded-full transition-transform duration-200 shadow-lg shadow-primary/40"></div>
+</div>
+</div>
+<div class="flex items-center justify-between px-5 py-3 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-blue-700 flex items-center justify-center overflow-hidden">
+<img alt="Facebook Logo" class="w-6 h-6 object-contain" data-alt="Facebook app icon with signature white lowercase f on blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdB0mrbdB4uyxoe0CtuUmSq5Ncr5K_-B0iDT9vk5_TSo5v-LhUDUDE_jAF55JwDRWHpGgwHf91hGdxM3fbo-u1JqxIIx7dVMC_BisMDaCtRuf8jDgp9nbclvfnNjcDADLmjrIV-Igys-yMgHaDhJ6t--rb8AM4P8yeZetyyKGKvCuOUL1ULsaJ1tghhwtLPvR97XzC2q3ueM1BJamXcS5vL09murhNth32S6iHW_kb_PLzSLcWgug370ulBpwWJ5nJSNLYb-r7ySv_"/>
+</div>
+<span class="text-on-surface font-medium">Facebook</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-colors duration-200"></div>
+<div class="absolute left-1 top-1 bg-outline w-4 h-4 rounded-full transition-transform duration-200"></div>
+</div>
+</div>
+<div class="flex items-center justify-between px-5 py-3 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-black flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="TikTok Logo" class="w-6 h-6 object-contain" data-alt="TikTok app icon with stylized music note logo on black square background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNkHlMAnGFOJygv184qbZ2L79nQkFEXsFXTyHa0avo_MukRCn6E5sJfaNh0Ax_01yPAAZHrrVxm1p4xukszFH1EeNu0PfA6uP4pz0JVXNPCcr4AjvELhiFJQboZaZFhzZPTXeVvEf6aA2qabqIM7WcUfW5fXdchxk_vtKJd2qzHUxgHujIuoLuQ9FyF2MeX0ULBzp9VDExSd91tFfE59FW9-G5wI1pBA69PITIPvbM3rup9e-QnclxaB_RWVrFIKE-NB7562KnHuyD"/>
+</div>
+<span class="text-on-surface font-medium">TikTok</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary/20 border border-primary/20 rounded-full transition-colors duration-200"></div>
+<div class="absolute right-1 top-1 bg-[#6C63FF] w-4 h-4 rounded-full transition-transform duration-200 shadow-lg shadow-primary/40"></div>
+</div>
+</div>
+<div class="flex items-center justify-between px-5 py-3 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-yellow-400 flex items-center justify-center overflow-hidden">
+<img alt="Snapchat Logo" class="w-6 h-6 object-contain" data-alt="Snapchat app icon with white ghost silhouette on bright yellow background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ2INokE7Qw2OExsW2yrx5BY0BJEmP5gjxRwh7JgbCCj8Fp4mtihRqFj8R0qssoIoMyfkuaCnWn-eHWZGtMzwie2LxtSBBP2VoprXjzdoqulw1Kbzx4_1jN0wHhODPlziVNbzmV2Te5na7GdAqCG_ZT4m5wp0ulz5fviAwx6PtbyI_ZEAlPWQIqw9lKSpKxutRQh8ZSTzxLEK9LMutAkzIBrrzBtJ5TCSuhwDKvTptI1WvUo90DnR99W43Jj1L76laAaVLq2Hf1pLa"/>
+</div>
+<span class="text-on-surface font-medium">Snapchat</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-colors duration-200"></div>
+<div class="absolute left-1 top-1 bg-outline w-4 h-4 rounded-full transition-transform duration-200"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- PERMISSIONS SECTION -->
+<section>
+<h2 class="text-[10px] font-bold uppercase tracking-[0.15em] text-outline ml-4 mb-3">PERMISSIONS</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden divide-y divide-outline-variant/15">
+<div class="flex items-center justify-between px-5 py-4 hover:bg-surface-container transition-colors">
+<span class="text-on-surface font-medium">Accessibility access</span>
+<div class="bg-secondary-container/20 text-secondary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest border border-secondary/20">Active</div>
+</div>
+<div class="flex items-center justify-between px-5 py-4 hover:bg-surface-container transition-colors">
+<span class="text-on-surface font-medium">Battery optimization</span>
+<div class="flex items-center gap-2 bg-tertiary-container/10 text-tertiary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest border border-tertiary-container/20">
+<span class="material-symbols-outlined text-sm">warning</span>
+                        Restricted
+                    </div>
+</div>
+<div class="flex items-center justify-between px-5 py-4 hover:bg-surface-container transition-colors">
+<span class="text-on-surface font-medium">Auto-start on reboot</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-12 h-6 bg-primary/20 border border-primary/20 rounded-full transition-colors duration-200"></div>
+<div class="absolute right-1 top-1 bg-[#6C63FF] w-4 h-4 rounded-full transition-transform duration-200 shadow-lg shadow-primary/40"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT SECTION -->
+<section>
+<h2 class="text-[10px] font-bold uppercase tracking-[0.15em] text-outline ml-4 mb-3">ABOUT</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden divide-y divide-outline-variant/15">
+<div class="flex items-center justify-between px-5 py-4 min-h-[56px]">
+<span class="text-on-surface font-medium">Version</span>
+<span class="text-outline-variant text-sm font-bold">1.0.0</span>
+</div>
+<div class="flex items-center justify-between px-5 py-4 min-h-[56px] hover:bg-surface-container transition-colors cursor-pointer">
+<span class="text-on-surface font-medium">Rate the app</span>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="flex items-center justify-between px-5 py-4 min-h-[56px] hover:bg-surface-container transition-colors cursor-pointer">
+<span class="text-error font-medium">Reset all data</span>
+<span class="material-symbols-outlined text-error">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#131318]/70 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-12px_40px_0_rgba(240,240,247,0.06)]">
+<div class="flex flex-col items-center justify-center text-[#94949e] px-6 py-2 transition-all hover:text-[#f0f0f7] active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">shield</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Shield</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#94949e] px-6 py-2 transition-all hover:text-[#f0f0f7] active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">bar_chart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Stats</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#1f1f25] text-[#6C63FF] rounded-full px-6 py-2 transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium uppercase tracking-widest">Settings</span>
+</div>
+</nav>
+</body></html>

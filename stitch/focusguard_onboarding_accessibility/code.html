@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdadb",
+              "secondary-fixed": "#73fda0",
+              "surface-container": "#1f1f25",
+              "surface-container-low": "#1b1b20",
+              "surface-container-highest": "#35343a",
+              "outline": "#918fa1",
+              "on-error-container": "#ffdad6",
+              "secondary": "#54e087",
+              "on-tertiary-fixed": "#40000f",
+              "on-secondary": "#00391a",
+              "primary-fixed-dim": "#c4c0ff",
+              "on-tertiary-container": "#5b0019",
+              "on-surface-variant": "#c7c4d8",
+              "surface-tint": "#c4c0ff",
+              "primary-container": "#8781ff",
+              "surface": "#131318",
+              "on-secondary-fixed": "#00210c",
+              "surface-bright": "#39383e",
+              "on-primary": "#2000a4",
+              "tertiary-container": "#ff506f",
+              "on-primary-container": "#1b0091",
+              "on-tertiary": "#67001e",
+              "on-background": "#e4e1e9",
+              "primary-fixed": "#e3dfff",
+              "inverse-surface": "#e4e1e9",
+              "tertiary": "#ffb2b8",
+              "primary": "#c4c0ff",
+              "on-secondary-container": "#00391a",
+              "on-secondary-fixed-variant": "#005228",
+              "on-primary-fixed-variant": "#3622ca",
+              "inverse-primary": "#4f44e2",
+              "error-container": "#93000a",
+              "on-primary-fixed": "#100069",
+              "surface-dim": "#131318",
+              "secondary-container": "#04af5d",
+              "tertiary-fixed-dim": "#ffb2b8",
+              "secondary-fixed-dim": "#54e087",
+              "surface-container-high": "#2a292f",
+              "surface-container-lowest": "#0e0e13",
+              "background": "#131318",
+              "surface-variant": "#35343a",
+              "on-surface": "#e4e1e9",
+              "outline-variant": "#464555",
+              "on-error": "#690005",
+              "error": "#ffb4ab",
+              "on-tertiary-fixed-variant": "#91002d",
+              "inverse-on-surface": "#303036"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0F;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #e4e1e9;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(31, 31, 37, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center overflow-hidden">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<!-- Step Indicators -->
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+<div class="w-6 h-2 rounded-full bg-primary shadow-[0_0_12px_rgba(196,192,255,0.4)] transition-all"></div>
+<div class="w-2 h-2 rounded-full bg-surface-container-highest"></div>
+</div>
+<span class="text-zinc-100 text-lg font-bold tracking-tighter ml-2">FocusGuard</span>
+</div>
+<button class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide text-zinc-500 hover:text-indigo-400 transition-colors active:scale-95 duration-200 ease-out">
+            Skip
+        </button>
+</header>
+<main class="flex-1 w-full max-w-lg flex flex-col items-center justify-center px-8 pt-20 pb-12">
+<!-- Illustration Canvas -->
+<div class="relative w-full aspect-square flex items-center justify-center mb-10">
+<!-- Background Glows -->
+<div class="absolute w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<!-- Minimal Phone Mockup -->
+<div class="relative w-64 h-[440px] bg-surface-container-lowest rounded-[2.5rem] p-3 shadow-2xl ring-1 ring-outline-variant/15 overflow-hidden">
+<!-- Screen Content -->
+<div class="w-full h-full bg-surface-container-low rounded-[1.8rem] p-4 flex flex-col gap-4">
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_back</span>
+<div class="h-2 w-24 bg-surface-container-highest rounded-full"></div>
+</div>
+<div class="mt-4 flex flex-col gap-3">
+<div class="h-3 w-32 bg-surface-container-highest rounded-full"></div>
+<div class="h-10 w-full bg-surface-container-highest/50 rounded-lg flex items-center px-3 gap-3">
+<div class="w-6 h-6 rounded bg-surface-container-highest"></div>
+<div class="h-2 flex-1 bg-surface-container-highest/50 rounded-full"></div>
+</div>
+<!-- Highlighted Setting -->
+<div class="relative h-14 w-full bg-primary/20 rounded-xl flex items-center px-3 gap-3 ring-2 ring-primary shadow-[0_0_20px_rgba(196,192,255,0.2)]">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-lg" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+</div>
+<div class="flex flex-col gap-1.5 flex-1">
+<div class="h-2.5 w-20 bg-primary rounded-full"></div>
+<div class="h-1.5 w-12 bg-primary/40 rounded-full"></div>
+</div>
+<div class="w-8 h-4 bg-primary/30 rounded-full relative">
+<div class="absolute right-1 top-0.5 w-3 h-3 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="h-10 w-full bg-surface-container-highest/50 rounded-lg flex items-center px-3 gap-3">
+<div class="w-6 h-6 rounded bg-surface-container-highest"></div>
+<div class="h-2 flex-1 bg-surface-container-highest/50 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-20 h-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="text-center flex flex-col items-center">
+<!-- Status Chip -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error-container/20 border border-error/10 mb-6">
+<span class="material-symbols-outlined text-error text-[16px]">warning</span>
+<span class="text-error text-xs font-semibold tracking-wide uppercase">Not enabled yet</span>
+</div>
+<h1 class="text-[24px] font-bold text-zinc-100 mb-3 tracking-tight">Enable accessibility access</h1>
+<p class="text-[15px] leading-relaxed text-on-surface-variant max-w-[320px] mb-8">
+                This lets FocusGuard detect and block short videos in real time. We never read your messages or personal data.
+            </p>
+</div>
+<!-- Action Footer -->
+<div class="w-full flex flex-col gap-4 items-center">
+<button class="w-full h-14 bg-primary text-on-primary font-bold text-base rounded-[14px] flex items-center justify-center gap-2 shadow-[0_8px_30px_rgba(108,99,255,0.2)] active:scale-95 transition-all duration-200">
+                Open Accessibility Settings
+                <span class="material-symbols-outlined">open_in_new</span>
+</button>
+<p class="text-[12px] text-zinc-500 font-medium">
+                You can disable this anytime from your phone settings.
+            </p>
+</div>
+</main>
+<!-- Decorative Bottom Gradient -->
+<div class="fixed bottom-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</body></html>

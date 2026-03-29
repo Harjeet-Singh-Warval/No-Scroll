@@ -1,0 +1,21 @@
+e: file:///C:/Users/123/AndroidStudioProjects/StopScroll/app/src/main/java/com/focusguard/ui/MainActivity.kt:98:22 Unresolved reference 'androidx'.
+e: file:///C:/Users/123/AndroidStudioProjects/StopScroll/app/src/main/java/com/focusguard/ui/screens/home/HomeScreen.kt:254:55 Unresolved reference 'ic_instagram_real'.
+e: file:///C:/Users/123/AndroidStudioProjects/StopScroll/app/src/main/java/com/focusguard/ui/screens/home/HomeScreen.kt:255:54 Unresolved reference 'ic_facebook_real'.
+e: file:///C:/Users/123/AndroidStudioProjects/StopScroll/app/src/main/java/com/focusguard/ui/screens/home/HomeScreen.kt:256:52 Unresolved reference 'ic_tiktok_real'.
+e: file:///C:/Users/123/AndroidStudioProjects/StopScroll/app/src/main/java/com/focusguard/ui/screens/home/HomeScreen.kt:257:54 Unresolved reference 'ic_snapchat_real'.
+e: file:///C:/Users/123/AndroidStudioProjects/StopScroll/app/src/main/java/com/focusguard/ui/screens/home/HomeScreen.kt:258:48 Unresolved reference 'ic_instagram_real'.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 22s
