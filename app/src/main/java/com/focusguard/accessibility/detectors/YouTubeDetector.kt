@@ -30,9 +30,12 @@ class YouTubeDetector : Detector {
         // Detect Shorts from Home Feed (the shelf)
         // If they click on it, the player opens. If the player opens, how to distinguish?
         val hasShortsShelf = AccessibilityUtils.findNodeById(rootNode, "com.google.android.youtube:id/shorts_shelf_item_root") != null
+        val hasReelPlayer = AccessibilityUtils.findNodeById(rootNode, "com.google.android.youtube:id/reel_player_view") != null
+        val hasReelRecycler = AccessibilityUtils.findNodeById(rootNode, "com.google.android.youtube:id/reel_recycler") != null
+        
         // We only block when they are WATCHING shorts, not just seeing the shelf. Wait, the prompt says "Look for shorts_shelf_item_root". But if they are just on home feed that's annoying. Let's assume seeing the shelf fullscreen or clicking it triggers block. Actually, player is "com.google.android.youtube:id/reel_player_view" sometimes.
         // Let's implement what's requested:
-        if (hasShortsShelf) return true
+        if (hasShortsShelf || hasReelPlayer || hasReelRecycler) return true
 
         return false
     }

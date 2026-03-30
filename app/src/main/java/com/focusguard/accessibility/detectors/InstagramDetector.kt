@@ -14,14 +14,39 @@ class InstagramDetector : Detector {
             logNodes(rootNode, 0)
         }
 
-        // EXCLUDE DMs: strictly look for DM Chat thread or Inbox (avoiding the generic "direct" button match on home feed)
+        // EXCLUDE DMs: strictly look for DM Chat thread or Inbox
         val isDM = AccessibilityUtils.containsNodeMatch(rootNode, { node ->
             val id = node.viewIdResourceName ?: ""
-            id == "com.instagram.android:id/direct_thread_list_container" ||
-            id == "com.instagram.android:id/row_thread_composer_edittext" ||
-            id == "com.instagram.android:id/message_content" ||
-            id == "com.instagram.android:id/thread_title" ||
-            id.contains("direct_message_list", ignoreCase = true)
+            val desc = node.contentDescription?.toString() ?: ""
+            val text = node.text?.toString() ?: ""
+            
+            // Safe identifiers for inbox and threads
+            if (id.contains("direct_thread", ignoreCase = true) ||
+                id.contains("direct_inbox", ignoreCase = true) ||
+                id.contains("device_contact_message", ignoreCase = true) ||
+                id.contains("direct_message_list", ignoreCase = true) ||
+                id.contains("message_content", ignoreCase = true) ||
+                id.contains("row_thread_composer", ignoreCase = true) ||
+                id.contains("fragment_direct_inbox", ignoreCase = true)) {
+                return@containsNodeMatch true
+            }
+
+            // Text and descriptions combined with action bar or title IDs (avoids matching regular feed buttons)
+            val isActionTitle = id.contains("action_bar_title", ignoreCase = true) || id.contains("thread_title", ignoreCase = true)
+            if (isActionTitle && (text.equals("Messages", ignoreCase = true) || text.equals("Chats", ignoreCase = true))) {
+                return@containsNodeMatch true
+            }
+            
+            // Call buttons only found at the top of DM threads
+            if (desc.contains("Video call", ignoreCase = true) || desc.contains("Audio call", ignoreCase = true)) {
+                // To be safe, ensure it's not a generic button by checking if we have thread context elsewhere?
+                // Actually, "Video call" in action bar is exclusively DM thread.
+                if (id.contains("action_bar", ignoreCase = true) || id.contains("video_call", ignoreCase = true)) {
+                    return@containsNodeMatch true
+                }
+            }
+            
+            false
         })
         if (isDM) return false
 
